@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitation de Dot - Notre Union</title>
+    <!-- Chargement d'une police élégante pour le mariage -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- SECTION HÉROS -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="names">Gabrielle & Steph</h1>
+            <p class="event-title">Notre Célébration de Dot</p>
+            <p class="tagline">Le respect de nos traditions, l'union de nos cœurs.</p>
+            
+            <!-- CORECTIF : Ajout du nom de l'image -->
+            <div class="hero-family-photo">
+                <img src="MBONGO5.jpg" alt="Notre Famille" class="family-img-circle">
+            </div>
+            
+            <!-- Compte à rebours -->
+            <div id="countdown" class="countdown">
+                <div class="time-box"><span id="days">00</span><label>Jours</label></div>
+                <div class="time-box"><span id="hours">00</span><label>Heures</label></div>
+                <div class="time-box"><span id="minutes">00</span><label>Min</label></div>
+                <div class="time-box"><span id="seconds">00</span><label>Sec</label></div>
+            </div>
+
+            <a href="#rsvp" class="btn-main">Confirmer ma présence</a>
+        </div>
+    </header>
+
+    <!-- SECTION DÉTAILS -->
+    <main class="container">
+        <section class="intro">
+            <h2>L'Histoire de notre Union</h2>
+            <p>Parce que notre bonheur ne serait pas complet sans vous, nous vous invitons chaleureusement à être témoins du respect de nos coutumes et de notre engagement mutuel.</p>
+        </section>
+
+        <section class="info-grid">
+            <div class="info-card">
+                <div class="icon">📅</div>
+                <h3>Quand</h3>
+                <p><strong>[Jour de la semaine Date]</strong><br>À partir de [Heure]</p>
+            </div>
+            <div class="info-card">
+                <div class="icon">📍</div>
+                <h3>Où</h3>
+                <p><strong>[Nom du Lieu]</strong><br>[Adresse complète]</p>
+                <a href="https://google.com" target="_blank" class="btn-secondary">Voir l'itinéraire</a>
+            </div>
+            <div class="info-card">
+                <div class="icon">👗</div>
+                <h3>Dress Code</h3>
+                <p><strong>[Thème vestimentaire]</strong><br>Couleurs suggérées : [Vos couleurs]</p>
+            </div>
+        </section>
+
+        <!-- SECTION CARROUSEL GALERIE -->
+        <section class="gallery-section">
+            <h2>Notre Album Photo</h2>
+            <p class="gallery-subtitle">Quelques souvenirs avant le grand jour (Cliquez pour agrandir)</p>
+            
+            <div class="carousel-container">
+                <button class="carousel-btn prev-btn" id="prevBtn">❮</button>
+                
+                <div class="carousel-track-container">
+                    <ul class="carousel-track" id="carouselTrack">
+                        <li class="carousel-slide"><img src="MBONGO1.png" alt="Photo 1" class="gallery-img"></li>
+                        <li class="carousel-slide"><img src="MBONGO2.png" alt="Photo 2" class="gallery-img"></li>
+                        <li class="carousel-slide"><img src="MBONGO3.png" alt="Photo 3" class="gallery-img"></li>
+                        <li class="carousel-slide"><img src="MBONGO4.png" alt="Photo 4" class="gallery-img"></li>
+                    </ul>
+                </div>
+                
+                <button class="carousel-btn next-btn" id="nextBtn">❯</button>
+            </div>
+        </section>
+
+        <!-- SECTION FORMULAIRE RSVP WHATSAPP -->
+        <section id="rsvp" class="rsvp-section">
+            <h2>Confirmer votre présence</h2>
+            <p>Cliquez ci-dessous pour nous envoyer directement votre réponse sur WhatsApp</p>
+            
+            <form id="rsvpForm" class="rsvp-form">
+                <div class="form-group">
+                    <label for="fullName">Nom et Prénom</label>
+                    <input type="text" id="fullName" required placeholder="Ex: M. et Mme Kouamé">
+                </div>
+
+                <div class="form-group">
+                    <label for="attendance">Serez-vous présent ?</label>
+                    <select id="attendance" required>
+                        <option value="" disabled selected>Choisissez une option</option>
+                        <option value="yes">Oui, avec grand plaisir !</option>
+                        <option value="no">Malheureusement, je ne pourrai pas</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="guestsGroup">
+                    <label for="guestCount">Nombre d'accompagnateurs (vous inclus)</label>
+                    <input type="number" id="guestCount" min="1" max="5" value="1">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Un petit mot pour les mariés (Optionnel)</label>
+                    <textarea id="message" rows="3" placeholder="Vos vœux de bonheur..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit" style="background-color: #25D366; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.717-1.454L0 24zm6.59-4.846c1.66.986 3.288 1.479 4.808 1.48 5.332-.001 9.682-4.321 9.685-9.647.002-2.58-1.001-5.005-2.825-6.83-1.824-1.826-4.247-2.831-6.822-2.832-5.334 0-9.686 4.322-9.688 9.648-.001 1.848.514 3.483 1.491 5.016l-.993 3.634 3.744-.971zm11.367-4.4c-.265-.132-1.564-.772-1.806-.859-.242-.088-.419-.132-.596.132-.176.265-.683.859-.837 1.035-.154.176-.308.198-.573.066-.265-.132-1.119-.413-2.132-1.317-.788-.703-1.32-1.571-1.474-1.835-.154-.265-.016-.407.117-.539.12-.119.265-.308.397-.463.132-.154.176-.265.265-.441.088-.176.044-.331-.022-.463-.066-.132-.596-1.432-.816-1.961-.215-.517-.43-.447-.596-.455-.154-.007-.33-.008-.507-.008-.176 0-.463.066-.705.331-.242.265-.925.904-.925 2.203 0 1.298.947 2.551 1.079 2.728.132.176 1.865 2.848 4.516 3.993.631.272 1.123.435 1.508.558.634.201 1.21.173 1.666.105.508-.076 1.564-.639 1.784-1.256.22-.617.22-1.146.154-1.256-.067-.109-.242-.176-.507-.308z"/>
+                    </svg>
+                    Confirmer sur WhatsApp
+                </button>
+            </form>
+            <div id="formFeedback" class="form-feedback hidden"></div>
+        </section>
+    </main>
+
+    <!-- FENÊTRE LIGHTBOX (PLEIN ÉCRAN) -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close" id="lightboxClose">&times;</span>
+        <img class="lightbox-content" id="lightboxImg" src="" alt="Plein écran">
+    </div>
+
+    <footer>
+        <p>&copy; 2026 - Célébration du Mariage Coutumier de Gabrielle & Steph</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

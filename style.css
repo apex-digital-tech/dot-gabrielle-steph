@@ -1,0 +1,550 @@
+/* Variables de Design */
+:root {
+  --primary: #c5a880; /* Teinte Or Traditionnel */
+  --primary-dark: #b0936b;
+  --dark: #2c2a29; /* Noir chaud */
+  --light: #fdfbf7; /* Blanc cassé / Crème */
+  --white: #ffffff;
+  --success: #4a7c59;
+}
+
+/* Rétablissement des styles de base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--light);
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", serif;
+}
+
+/* ==========================================================================
+   CORRECTIF CRITIQUE : SECTION HÉROS RESPONSIVE (MIS À JOUR)
+   ========================================================================== */
+.hero {
+  /* Le dégradé assombrit l'image pour rendre les écritures de Gabrielle & Steph parfaitement lisibles */
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url("MBONGO5.jpg") no-repeat;
+
+  /* Propriétés de contrôle de l'arrière-plan */
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+
+  /* RESTRUCTURATION RESPONSIVE : */
+  min-height: 100vh; /* S'adapte à AU MOINS 100% de l'écran, mais s'aggrandit si le contenu déborde */
+  height: auto; /* Empêche le contenu de casser le bloc sur mobile */
+
+  /* Alignement interne du texte */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--white);
+  padding: 40px 20px; /* Augmentation du padding pour respirer sur mobile */
+}
+
+.hero-content {
+  max-width: 800px;
+  animation: fadeIn 1.5s ease-out;
+  z-index: 2;
+
+  /* Ajustement pour le flux vertical */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* CORRECTIF : AJOUT DU CADRE DE LA PHOTO DE FAMILLE ENCADRÉE */
+.hero-family-photo {
+  width: 140px; /* Taille parfaite pour rester discret mais visible */
+  height: 140px;
+  margin: 15px auto 25px auto; /* Espace équilibré au-dessus et en-dessous */
+  border-radius: 50%; /* Rend le cadre parfaitement rond */
+  overflow: hidden; /* Coupe tout ce qui dépasse du cercle */
+  border: 3px solid var(--primary); /* Rappel de la teinte Or Traditionnel */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.family-img-circle {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Empêche l'image de se déformer dans le cercle */
+  object-position: center; /* Centre les visages */
+  display: block;
+}
+
+.names {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+  line-height: 1.2; /* Évite le chevauchement si les prénoms passent sur 2 lignes */
+}
+
+/* ... (Conservez vos styles intermédiaires inchangés jusqu'aux Media Queries) ... */
+
+/* Responsivité Mobile */
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 15px; /* Donne de l'espace pour le défilement tactile */
+  }
+
+  .hero-family-photo {
+    width: 110px; /* Réduction légère de la photo sur petit écran */
+    height: 110px;
+    margin: 10px auto 20px auto;
+  }
+
+  .names {
+    font-size: 2.3rem; /* Légèrement réduit pour éviter les coupures de mots */
+  }
+
+  .event-title {
+    font-size: 1.3rem;
+  }
+
+  .tagline {
+    font-size: 1rem;
+    margin-bottom: 25px;
+  }
+
+  .countdown {
+    gap: 8px; /* Rapproche les boîtes pour éviter qu'elles sortent de l'écran */
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 340px; /* Aligne proprement le bloc sur mobile */
+  }
+
+  .time-box {
+    min-width: 60px;
+    padding: 8px 4px;
+  }
+
+  .time-box span {
+    font-size: 1.3rem;
+  }
+
+  .time-box label {
+    font-size: 0.65rem;
+  }
+
+  .btn-main {
+    padding: 12px 25px; /* Bouton plus adapté aux pouces sur mobile */
+    font-size: 0.95rem;
+  }
+
+  .gallery-img {
+    height: 350px;
+  }
+  .prev-btn {
+    left: 5px;
+  }
+  .next-btn {
+    right: 5px;
+  }
+  .rsvp-section {
+    padding: 30px 20px;
+  }
+}
+
+/* Compte à rebours */
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.time-box {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  padding: 15px;
+  border-radius: 8px;
+  min-width: 80px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.time-box span {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.time-box label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Boutons */
+.btn-main {
+  display: inline-block;
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 15px 35px;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(197, 168, 128, 0.4);
+}
+
+.btn-main:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--primary-dark);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* Conteneur Global */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 60px auto;
+}
+
+.intro h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.intro h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 2px;
+  background-color: var(--primary);
+  margin: 10px auto 0 auto;
+}
+
+/* Grille d'information */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 80px;
+}
+
+.info-card {
+  background: var(--white);
+  padding: 40px 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  transition: transform 0.3s ease;
+  border: 1px solid rgba(197, 168, 128, 0.1);
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+}
+
+.info-card .icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.info-card h3 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: var(--primary-dark);
+}
+
+/* Carrousel */
+.gallery-section {
+  margin-bottom: 80px;
+  text-align: center;
+}
+
+.gallery-subtitle {
+  font-style: italic;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.carousel-container {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.carousel-track-container {
+  overflow: hidden;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.carousel-track {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  transition: transform 0.4s ease-in-out;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 450px;
+  object-fit: contain;
+  background-color: #f5f2eb;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  display: block;
+}
+
+.gallery-img:hover {
+  transform: scale(1.01);
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 2;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-btn:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.prev-btn {
+  left: -25px;
+}
+.next-btn {
+  right: -25px;
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox-content {
+  max-width: 85%;
+  max-height: 85%;
+  border-radius: 6px;
+  animation: zoomIn 0.3s ease;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  color: #fff;
+  font-size: 3rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.lightbox-close:hover {
+  color: var(--primary);
+}
+
+/* Section Formulaire RSVP */
+.rsvp-section {
+  background-color: var(--white);
+  padding: 50px 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.rsvp-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.rsvp-form {
+  margin-top: 30px;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #e1dcd6;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+  background-color: #faf9f6;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.btn-submit {
+  width: 100%;
+  background-color: var(--dark);
+  color: var(--white);
+  border: none;
+  padding: 15px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+  background-color: #444;
+}
+
+.form-feedback {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.form-feedback.success {
+  background-color: #eaf5ec;
+  color: var(--success);
+}
+
+.hidden {
+  display: none;
+}
+
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 0.85rem;
+  color: #888;
+  background-color: #f2efe9;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Responsivité Mobile */
+@media (max-width: 768px) {
+  .names {
+    font-size: 2.5rem;
+  }
+  .event-title {
+    font-size: 1.4rem;
+  }
+  .countdown {
+    gap: 10px;
+  }
+  .time-box {
+    min-width: 65px;
+    padding: 10px;
+  }
+  .time-box span {
+    font-size: 1.5rem;
+  }
+  .gallery-img {
+    height: 350px;
+  }
+  .prev-btn {
+    left: 5px;
+  }
+  .next-btn {
+    right: 5px;
+  }
+  .rsvp-section {
+    padding: 30px 20px;
+  }
+}
