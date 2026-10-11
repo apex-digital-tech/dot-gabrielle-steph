@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     
     // --- 1. CONFIGURATION DU COMPTE À REBOURS ---
-    const weddingDate = new Date('2026-12-12T14:00:00').getTime();
+    const weddingDate = new Date('2026-10-24T11:30:20').getTime();
 
     const updateCountdown = () => {
         const now = new Date().getTime();
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // --- 3. TRAITEMENT DE LA SOUMISSION DU FORMULAIRE (WHATSAPP) ---
+    // --- 3. TRAITEMENT DE LA SOUMISSION DU FORMULAIRE (WHATSAPP CORRIGÉ) ---
     const rsvpForm = document.getElementById('rsvpForm');
     const feedback = document.getElementById('formFeedback');
 
@@ -72,18 +72,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const attendanceText = attendance === 'yes' ? 'Oui, avec grand plaisir !' : 'Malheureusement, je ne pourrai pas';
             
-            let text = `*Confirmation de présence*%0a`;
-            text += `*Nom :* ${encodeURIComponent(fullName)}%0a`;
-            text += `*Présence :* ${encodeURIComponent(attendanceText)}%0a`;
-            text += `*Nombre d'accompagnateurs :* ${encodeURIComponent(guestCount)}%0a`;
+            // Construction propre du texte pour éviter les bugs de caractères
+            let rawText = `*Confirmation de présence*\n`;
+            rawText += `*Nom :* ${fullName}\n`;
+            rawText += `*Présence :* ${attendanceText}\n`;
+            rawText += `*Nombre d'accompagnateurs :* ${guestCount}\n`;
             if (message) {
-                text += `*Message :* ${encodeURIComponent(message)}`;
+                rawText += `*Message :* ${message}`;
             }
 
-            const phoneNumber = '212615416192';
-            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${text}`;
+            const phoneNumber = '14182717662';
+            // CORRECTION ICI : Ajout du slash (/) et du signe égal (=)
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(rawText)}`;
             
-            // Ouvre WhatsApp avec le message pré-rempli
             window.open(whatsappUrl, '_blank');
 
             if (feedback) {
@@ -95,7 +96,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (guestsGroup) guestsGroup.style.display = 'block';
         });
     }
-
 
     // --- 4. GESTION DU CARROUSEL D'IMAGES ---
     const track = document.getElementById('carouselTrack');

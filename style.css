@@ -39,7 +39,7 @@ h3 {
   /* Le dégradé assombrit l'image pour rendre les écritures de Gabrielle & Steph parfaitement lisibles */
   background:
     linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
-    url("MBONGO5.jpg") no-repeat;
+    url("MOX2.jpg") no-repeat;
 
   /* Propriétés de contrôle de l'arrière-plan */
   background-size: cover;
@@ -492,6 +492,95 @@ footer {
   font-size: 0.85rem;
   color: #888;
   background-color: #f2efe9;
+}
+
+/* ... Tout votre code CSS actuel existant ... */
+/* ... Tout votre code CSS actuel existant ... */
+
+footer {
+  text-align: center;
+  padding: 30px;
+  background-color: #4a3b32;
+  color: #fff;
+  margin-top: 50px;
+}
+
+/* ==========================================================================
+   COLLEZ LE NOUVEAU CODE JUSTE ICI (TOUT EN BAS DU FICHIER) :
+   ========================================================================== */
+.family-union-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 700px;
+  margin: 35px auto 15px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.family-side {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+}
+
+.left-side {
+  border-right: 1px dashed #e0e0e0;
+}
+
+.right-side {
+  border-left: 1px dashed #e0e0e0;
+}
+
+.family-side h3 {
+  font-size: 1.1rem;
+  color: #b38f4d;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.family-side .family-name,
+.family-side .clan-name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.family-side .lineage-names {
+  font-size: 0.95rem;
+  color: #7f8c8d;
+  font-style: italic;
+  margin-top: 4px;
+}
+
+.family-separator {
+  padding: 0 15px;
+  z-index: 2;
+}
+
+.family-separator .heart-icon {
+  font-size: 1.6rem;
+  color: #e74c3c;
+  background: #fff;
+  padding: 5px;
+}
+
+@media (max-width: 600px) {
+  .family-union-grid {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .left-side,
+  .right-side {
+    border: none;
+  }
+  .family-separator {
+    transform: rotate(90deg);
+    margin: -5px 0;
+  }
 }
 
 /* Animations */
