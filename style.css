@@ -33,59 +33,48 @@ h3 {
 }
 
 /* ==========================================================================
-   CORRECTIF CRITIQUE : SECTION HÉROS RESPONSIVE (MIS À JOUR)
+   SECTION HÉROS
    ========================================================================== */
 .hero {
-  /* Le dégradé assombrit l'image pour rendre les écritures de Gabrielle & Steph parfaitement lisibles */
   background:
     linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
     url("MOX2.jpg") no-repeat;
-
-  /* Propriétés de contrôle de l'arrière-plan */
   background-size: cover;
   background-position: center;
   width: 100%;
-
-  /* RESTRUCTURATION RESPONSIVE : */
-  min-height: 100vh; /* S'adapte à AU MOINS 100% de l'écran, mais s'aggrandit si le contenu déborde */
-  height: auto; /* Empêche le contenu de casser le bloc sur mobile */
-
-  /* Alignement interne du texte */
+  min-height: 100vh;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   color: var(--white);
-  padding: 40px 20px; /* Augmentation du padding pour respirer sur mobile */
+  padding: 40px 20px;
 }
 
 .hero-content {
   max-width: 800px;
-  animation: fadeIn 1.5s ease-out;
   z-index: 2;
-
-  /* Ajustement pour le flux vertical */
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* CORRECTIF : AJOUT DU CADRE DE LA PHOTO DE FAMILLE ENCADRÉE */
 .hero-family-photo {
-  width: 140px; /* Taille parfaite pour rester discret mais visible */
+  width: 140px;
   height: 140px;
-  margin: 15px auto 25px auto; /* Espace équilibré au-dessus et en-dessous */
-  border-radius: 50%; /* Rend le cadre parfaitement rond */
-  overflow: hidden; /* Coupe tout ce qui dépasse du cercle */
-  border: 3px solid var(--primary); /* Rappel de la teinte Or Traditionnel */
+  margin: 15px auto 25px auto;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--primary);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .family-img-circle {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Empêche l'image de se déformer dans le cercle */
-  object-position: center; /* Centre les visages */
+  object-fit: cover;
+  object-position: center;
   display: block;
 }
 
@@ -93,73 +82,7 @@ h3 {
   font-size: 3.5rem;
   margin-bottom: 10px;
   letter-spacing: 1px;
-  line-height: 1.2; /* Évite le chevauchement si les prénoms passent sur 2 lignes */
-}
-
-/* ... (Conservez vos styles intermédiaires inchangés jusqu'aux Media Queries) ... */
-
-/* Responsivité Mobile */
-@media (max-width: 768px) {
-  .hero {
-    padding: 60px 15px; /* Donne de l'espace pour le défilement tactile */
-  }
-
-  .hero-family-photo {
-    width: 110px; /* Réduction légère de la photo sur petit écran */
-    height: 110px;
-    margin: 10px auto 20px auto;
-  }
-
-  .names {
-    font-size: 2.3rem; /* Légèrement réduit pour éviter les coupures de mots */
-  }
-
-  .event-title {
-    font-size: 1.3rem;
-  }
-
-  .tagline {
-    font-size: 1rem;
-    margin-bottom: 25px;
-  }
-
-  .countdown {
-    gap: 8px; /* Rapproche les boîtes pour éviter qu'elles sortent de l'écran */
-    margin-bottom: 30px;
-    width: 100%;
-    max-width: 340px; /* Aligne proprement le bloc sur mobile */
-  }
-
-  .time-box {
-    min-width: 60px;
-    padding: 8px 4px;
-  }
-
-  .time-box span {
-    font-size: 1.3rem;
-  }
-
-  .time-box label {
-    font-size: 0.65rem;
-  }
-
-  .btn-main {
-    padding: 12px 25px; /* Bouton plus adapté aux pouces sur mobile */
-    font-size: 0.95rem;
-  }
-
-  .gallery-img {
-    height: 350px;
-  }
-  .prev-btn {
-    left: 5px;
-  }
-  .next-btn {
-    right: 5px;
-  }
-  .rsvp-section {
-    padding: 30px 20px;
-  }
+  line-height: 1.2;
 }
 
 /* Compte à rebours */
@@ -246,7 +169,50 @@ h3 {
   margin: 10px auto 0 auto;
 }
 
-/* Grille d'information */
+/* ==========================================================================
+   EMPLACEMENT ORDINATEUR : STYLE HARMONISÉ POUR LES DEUX FAMILLES
+   ========================================================================== */
+.family-union-grid {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 40px auto 10px auto;
+  max-width: 600px;
+}
+
+.family-side {
+  flex: 1;
+  text-align: center;
+}
+
+.family-side h3 {
+  font-size: 1.4rem;
+  color: var(--primary-dark);
+  margin-bottom: 5px;
+}
+
+.family-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.clan-name {
+  font-size: 0.95rem;
+  font-style: italic;
+  color: #666;
+  margin-top: 2px;
+}
+
+.family-separator {
+  padding: 0 20px;
+  font-size: 2.2rem;
+  color: var(--primary);
+  font-family: "Playfair Display", serif;
+  font-weight: 300;
+}
+
+/* Grille d'information logistique */
 .info-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -279,7 +245,7 @@ h3 {
   color: var(--primary-dark);
 }
 
-/* Carrousel */
+/* Carrousel Galerie */
 .gallery-section {
   margin-bottom: 80px;
   text-align: center;
@@ -383,7 +349,6 @@ h3 {
   max-width: 85%;
   max-height: 85%;
   border-radius: 6px;
-  animation: zoomIn 0.3s ease;
 }
 
 .lightbox-close {
@@ -429,211 +394,97 @@ h3 {
 .form-group label {
   display: block;
   margin-bottom: 8px;
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-  width: 100%;
-  padding: 12px 15px;
-  border: 1px solid #e1dcd6;
-  border-radius: 6px;
-  font-family: inherit;
-  font-size: 1rem;
-  transition: border-color 0.3s;
-  background-color: #faf9f6;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: var(--primary);
-}
-
-.btn-submit {
-  width: 100%;
-  background-color: var(--dark);
-  color: var(--white);
-  border: none;
-  padding: 15px;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.btn-submit:hover {
-  background-color: #444;
-}
-
-.form-feedback {
-  margin-top: 20px;
-  padding: 15px;
-  border-radius: 6px;
   font-weight: 500;
 }
 
-.form-feedback.success {
-  background-color: #eaf5ec;
-  color: var(--success);
-}
-
-.hidden {
-  display: none;
-}
-
-footer {
-  text-align: center;
-  padding: 40px 20px;
-  font-size: 0.85rem;
-  color: #888;
-  background-color: #f2efe9;
-}
-
-/* ... Tout votre code CSS actuel existant ... */
-/* ... Tout votre code CSS actuel existant ... */
-
-footer {
-  text-align: center;
-  padding: 30px;
-  background-color: #4a3b32;
-  color: #fff;
-  margin-top: 50px;
-}
-
 /* ==========================================================================
-   COLLEZ LE NOUVEAU CODE JUSTE ICI (TOUT EN BAS DU FICHIER) :
+   PLUGINS / MEDIA QUERIES MOBILE (TOUT EN BAS DU FICHIER)
    ========================================================================== */
-.family-union-grid {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 700px;
-  margin: 35px auto 15px auto;
-  padding: 20px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-}
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 15px;
+  }
 
-.family-side {
-  flex: 1;
-  text-align: center;
-  padding: 10px;
-}
+  .hero-family-photo {
+    width: 110px;
+    height: 110px;
+    margin: 10px auto 20px auto;
+  }
 
-.left-side {
-  border-right: 1px dashed #e0e0e0;
-}
+  .names {
+    font-size: 2.3rem;
+  }
 
-.right-side {
-  border-left: 1px dashed #e0e0e0;
-}
+  .event-title {
+    font-size: 1.3rem;
+  }
 
-.family-side h3 {
-  font-size: 1.1rem;
-  color: #b38f4d;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 8px;
-}
+  .tagline {
+    font-size: 1rem;
+    margin-bottom: 25px;
+  }
 
-.family-side .family-name,
-.family-side .clan-name {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: #2c3e50;
-}
-
-.family-side .lineage-names {
-  font-size: 0.95rem;
-  color: #7f8c8d;
-  font-style: italic;
-  margin-top: 4px;
-}
-
-.family-separator {
-  padding: 0 15px;
-  z-index: 2;
-}
-
-.family-separator .heart-icon {
-  font-size: 1.6rem;
-  color: #e74c3c;
-  background: #fff;
-  padding: 5px;
-}
-
-@media (max-width: 600px) {
+  /* EMPLACEMENT MOBILE : RESPONSIVITÉ DU BLOC DES FAMILLES */
   .family-union-grid {
     flex-direction: column;
     gap: 15px;
   }
-  .left-side,
-  .right-side {
-    border: none;
-  }
+
   .family-separator {
     transform: rotate(90deg);
-    margin: -5px 0;
+    padding: 0;
+    margin: 5px 0;
   }
-}
 
-/* Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes zoomIn {
-  from {
-    transform: scale(0.9);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-/* Responsivité Mobile */
-@media (max-width: 768px) {
-  .names {
-    font-size: 2.5rem;
-  }
-  .event-title {
-    font-size: 1.4rem;
-  }
   .countdown {
-    gap: 10px;
+    display: flex !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 100%;
   }
+
   .time-box {
-    min-width: 65px;
-    padding: 10px;
+    min-width: 65px !important;
+    flex: 1;
+    padding: 10px 4px !important;
   }
+
   .time-box span {
-    font-size: 1.5rem;
+    font-size: 1.4rem !important;
   }
+
+  .time-box label {
+    font-size: 0.65rem !important;
+  }
+
+  .btn-main {
+    padding: 12px 25px;
+    font-size: 0.95rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .carousel-container {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+
   .gallery-img {
-    height: 350px;
+    height: 300px;
   }
+
   .prev-btn {
     left: 5px;
   }
+
   .next-btn {
     right: 5px;
   }
+
   .rsvp-section {
     padding: 30px 20px;
+    width: 100%;
   }
 }
