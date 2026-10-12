@@ -98,6 +98,103 @@ h3 {
 
 /* ... (Conservez vos styles intermédiaires inchangés jusqu'aux Media Queries) ... */
 
+/* ==========================================================================
+   STYLE DE LA SECTION PROGRAMME (TIMELINE) - EMPLACEMENT ORDINATEUR
+   ========================================================================== */
+.program {
+  margin-bottom: 80px;
+  text-align: center;
+}
+
+.program h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.timeline {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+/* Ligne centrale verticale Or */
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  background-color: var(--primary);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1px;
+}
+
+.event {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* Alignement alterné (Gauche / Droite) */
+.event:nth-child(odd) {
+  left: 0;
+  text-align: right;
+}
+
+.event:nth-child(even) {
+  left: 50%;
+  text-align: left;
+}
+
+/* Petits cercles indicateurs sur la ligne Or */
+.event::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  right: -8px;
+  background-color: var(--white);
+  border: 3px solid var(--primary);
+  top: 20px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.event:nth-child(even)::after {
+  left: -8px;
+}
+
+.time {
+  font-weight: 700;
+  color: var(--primary-dark);
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.details {
+  background: var(--white);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(197, 168, 128, 0.1);
+  display: inline-block;
+  text-align: left;
+  max-width: 100%;
+}
+
+.details h3 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  color: var(--dark);
+}
+
+.details p {
+  font-size: 0.95rem;
+  color: #666;
+}
+
 /* Responsivité Mobile */
 @media (max-width: 768px) {
   .hero {
