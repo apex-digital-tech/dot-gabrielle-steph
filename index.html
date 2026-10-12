@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invitation de Dot - Notre Union</title>
-    <!-- Chargement d'une police élégante pour le mariage -->
+    <!-- Chargement propre des polices élégantes (Playfair Display & Poppins) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://googleapis.com" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -19,19 +19,17 @@
             <p class="event-title">Notre Célébration de Dot</p>
             <p class="tagline">Le respect de nos traditions, l'union de nos cœurs.</p>
             
-            <!-- CORECTIF : Ajout du nom de l'image -->
             <div class="hero-family-photo">
                 <img src="MOX2.jpg" alt="Notre Famille" class="family-img-circle">
             </div>
             
             <!-- Compte à rebours -->
-          <div id="countdown" class="countdown">
-            <div class="time-box"><span id="days">00</span><label>Jours</label></div>
-            <div class="time-box"><span id="hours">00</span><label>Heures</label></div>
-            <div class="time-box"><span id="minutes">00</span><label>Minutes</label></div>
-            <div class="time-box"><span id="seconds">00</span><label>Secondes</label></div>
-        </div>
-
+            <div id="countdown" class="countdown">
+                <div class="time-box"><span id="days">00</span><label>Jours</label></div>
+                <div class="time-box"><span id="hours">00</span><label>Heures</label></div>
+                <div class="time-box"><span id="minutes">00</span><label>Minutes</label></div>
+                <div class="time-box"><span id="seconds">00</span><label>Secondes</label></div>
+            </div>
 
             <a href="#rsvp" class="btn-main">Confirmer ma présence</a>
         </div>
@@ -43,8 +41,8 @@
             <h2>L'Histoire de notre Union</h2>
             <p>Parce que notre bonheur ne serait pas complet sans vous, nous vous invitons chaleureusement à être témoins du respect de nos coutumes et de notre engagement mutuel.</p>
             
-            <!-- AJOUT : Présentation des Familles (Tradition) -->
-             <div class="family-union-grid">
+            <!-- Présentation des Familles (Tradition) -->
+            <div class="family-union-grid">
                 <div class="family-side left-side">
                     <h3>Côté Gaby</h3>
                     <p class="family-name">Famille Zoba</p>
@@ -59,24 +57,25 @@
                     <p class="clan-name">Batanga et Denguet-Atticky</p>
                 </div>
             </div>
+        </section> <!-- CORRECTIF : La balise de section fermante manquante a été remise ici -->
 
-
+        <!-- Grille logistique -->
         <section class="info-grid">
             <div class="info-card">
-                <div class="icon"></div>
+                <div class="icon">📅</div>
                 <h3>Quand</h3>
                 <p><strong>Le 24 Octobre</strong><br>À partir de 11h30</p>
             </div>
             <div class="info-card">
                 <div class="icon">📍</div>
                 <h3>Où</h3>
-                <p><strong>Point-noire</strong><br>Au Quartier Wharf derrière l'hôtel Azur</p>
+                <p><strong>Pointe-Noire</strong><br>Au Quartier Wharf derrière l'hôtel Azur</p>
                 <a href="https://google.com" target="_blank" class="btn-secondary">Voir l'itinéraire</a>
             </div>
             <div class="info-card">
                 <div class="icon">👗</div>
                 <h3>Dress Code</h3>
-                <p><strong>Tenue de ville</strong><br>Couleurs suggérées : Au choix</p>
+                <p><strong>Tenue de ville</strong><br>Couleurs suggérieures : Au choix</p>
             </div>
         </section>
 
@@ -131,9 +130,9 @@
                     <textarea id="message" rows="3" placeholder="Vos vœux de bonheur..."></textarea>
                 </div>
 
-                <button type="submit" class="btn-submit" style="background-color: #25D366; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                <button type="submit" class="btn-submit" style="background-color: #25D366; display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; border: none; padding: 15px; border-radius: 30px; color: white; font-weight: 600; cursor: pointer; font-size: 1rem;">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.717-1.454L0 24zm6.59-4.846c1.66.986 3.288 1.479 4.808 1.48 5.332-.001 9.682-4.321 9.685-9.647.002-2.58-1.001-5.005-2.825-6.83-1.824-1.826-4.247-2.831-6.822-2.832-5.334 0-9.686 4.322-9.688 9.648-.001 1.848.514 3.483 1.491 5.016l-.993 3.634 3.744-.971zm11.367-4.4c-.265-.132-1.564-.772-1.806-.859-.242-.088-.419-.132-.596.132-.176.265-.683.859-.837 1.035-.154.176-.308.198-.573.066-.265-.132-1.119-.413-2.132-1.317-.788-.703-1.32-1.571-1.474-1.835-.154-.265-.016-.407.117-.539.12-.119.265-.308.397-.463.132-.154.176-.265.265-.441.088-.176.044-.331-.022-.463-.066-.132-.596-1.432-.816-1.961-.215-.517-.43-.447-.596-.455-.154-.007-.33-.008-.507-.008-.176 0-.463.066-.705.331-.242.265-.925.904-.925 2.203 0 1.298.947 2.551 1.079 2.728.132.176 1.865 2.848 4.516 3.993.631.272 1.123.435 1.508.558.634.201 1.21.173 1.666.105.508-.076 1.564-.639 1.784-1.256.22-.617.22-1.146.154-1.256-.067-.109-.242-.176-.507-.308z"/>
+                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.717-1.454L0 24zm6.59-4.846c1.66.986 3.288 1.479 4.808 1.48 5.332-.001 9.682-4.321 9.685-9.647.002-2.58-1.001-5.005-2.825-6.83-1.824-1.826-4.247-2.831-6.822-2.832-5.334 0-9.686 4.322-9.688 9.648-.001 1.848.514 3.483 1.491 5.016l-.993 3.634 3.744-.971zm11.367-4.4c-.265-.132-1.564-.772-1.806-.859-.242-.088-.419-.132-.596.132-.176.265-.683.859-.837 1.035-.154.176-.308.198-.573.066-.265-.132-1.119-.413-2.132-1.317-.788-.703-1.32-1.571-1.474-1.835-.154-.265-.016-.407.117-.539.12-.119.265-.308.397-.463.132-.154.176-.265 graves.265-.441.088-.176.044-.331-.022-.463-.066-.132-.596-1.432-.816-1.961-.215-.517-.43-.447-.596-.455-.154-.007-.33-.008-.507-.008-.176 0-.463.066-.705.331-.242.265-.925.904-.925 2.203 0 1.298.947 2.551 1.079 2.728.132.176 1.865 2.848 4.516 3.993.631.272 1.123.435 1.508.558.634.201 1.21.173 1.666.105.508-.076 1.564-.639 1.784-1.256.22-.617.22-1.146.154-1.256-.067-.109-.242-.176-.507-.308z"/>
                     </svg>
                     Confirmer sur WhatsApp
                 </button>
@@ -152,6 +151,7 @@
         <p>&copy; 2026 - Célébration du Mariage Coutumier de Gabrielle & Steph</p>
     </footer>
 
+    <!-- Appel propre du fichier de script -->
     <script src="main.js"></script>
 </body>
 </html>
